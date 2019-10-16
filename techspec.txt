@@ -1,0 +1,222 @@
+
+List of features:
+	Player
+		Programming
+			Difficulties
+				-Rotation rollowing mouse pointer
+				-Rendering sprite with that rotation
+			Functions
+				-pointToMouse()
+			Performance Impact
+				-Minimal, just calculating rotation based on mouse position and rendering sprite at that rotation
+		Dependencies
+			Libraries
+			Assumptions
+		Priority
+		Feasibility
+			Difficulty
+			Time Requirement
+			Issues
+		Data and Variables
+			Variables
+			Data Structures
+			Local Variables
+			Global Variables
+		Relational Map
+			Relations to Other Functions
+			Where is This Function Called
+	Bullet Bouncing
+		Programming
+			Difficulties
+			Functions
+			Performance Impact
+		Dependencies
+			Libraries
+			Assumptions
+		Priority
+		Feasibility
+			Difficulty
+			Time Requirement
+			Issues
+		Data and Variables
+			Variables
+			Data Structures
+			Local Variables
+			Global Variables
+		Relational Map
+			Relations to Other Functions
+			Where is This Function Called
+	Enemies
+		Programming
+			Difficulties
+			Functions
+			Performance Impact
+		Dependencies
+			Libraries
+			Assumptions
+		Priority
+		Feasibility
+			Difficulty
+			Time Requirement
+			Issues
+		Data and Variables
+			Variables
+			Data Structures
+			Local Variables
+			Global Variables
+		Relational Map
+			Relations to Other Functions
+			Where is This Function Called
+	Opening a gate
+		Programming
+			Difficulties
+			Functions
+			Performance Impact
+		Dependencies
+			Libraries
+			Assumptions
+		Priority
+		Feasibility
+			Difficulty
+			Time Requirement
+			Issues
+		Data and Variables
+			Variables
+			Data Structures
+			Local Variables
+			Global Variables
+		Relational Map
+			Relations to Other Functions
+			Where is This Function Called
+	Battle Royale
+		Programming
+			Difficulties
+			Functions
+			Performance Impact
+		Dependencies
+			Libraries
+			Assumptions
+		Priority
+		Feasibility
+			Difficulty
+			Time Requirement
+			Issues
+		Data and Variables
+			Variables
+			Data Structures
+			Local Variables
+			Global Variables
+		Relational Map
+			Relations to Other Functions
+			Where is This Function Called
+	2 Player levels
+		Programming
+			Difficulties
+			Functions
+			Performance Impact
+		Dependencies
+			Libraries
+			Assumptions
+		Priority
+		Feasibility
+			Difficulty
+			Time Requirement
+			Issues
+		Data and Variables
+			Variables
+			Data Structures
+			Local Variables
+			Global Variables
+		Relational Map
+			Relations to Other Functions
+			Where is This Function Called
+	Level timer
+		Programming
+			Difficulties
+			Functions
+			Performance Impact
+		Dependencies
+			Libraries
+			Assumptions
+		Priority
+		Feasibility
+			Difficulty
+			Time Requirement
+			Issues
+		Data and Variables
+			Variables
+			Data Structures
+			Local Variables
+			Global Variables
+		Relational Map
+			Relations to Other Functions
+			Where is This Function Called
+	Ammo
+		Programming
+			Difficulties
+			Functions
+			Performance Impact
+		Dependencies
+			Libraries
+			Assumptions
+		Priority
+		Feasibility
+			Difficulty
+			Time Requirement
+			Issues
+		Data and Variables
+			Variables
+			Data Structures
+			Local Variables
+			Global Variables
+		Relational Map
+			Relations to Other Functions
+			Where is This Function Called
+	Coins
+		Programming
+			Difficulties
+			Functions
+			Performance Impact
+		Dependencies
+			Libraries
+			Assumptions
+		Priority
+		Feasibility
+			Difficulty
+			Time Requirement
+			Issues
+		Data and Variables
+			Variables
+			Data Structures
+			Local Variables
+			Global Variables
+		Relational Map
+			Relations to Other Functions
+			Where is This Function Called
+			
+			
+Describe each game feature from a technical perspective 
+	Identify programming difficulties of each feature	
+	Define / pseudo-code core functions each feature will need
+	Include the performance impact of each feature
+
+Identify dependencies or assumptions
+	Does this code need any libraries or rely on pre-written code?
+	Are there design assumptions which are actually entire features?
+
+Prioritize each feature (with reasoning)
+
+Feasibility analysis
+	What are the most difficult items to program regarding technical difficulty?  
+	What are the commitments regarding time needed to program?
+	Identify technical issues with the design
+
+Data storage and variables
+	Layout and list all variables,  
+	Label functionality of each variable
+	Call out any data structures needed for program operation
+	Identify which data is global and which is local
+
+Functional code relational map
+	How do functions relate to one another
+	Which functions are called for which part of the program
