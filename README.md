@@ -6,9 +6,8 @@ Regular controls:
 	(same for 1st and 2nd player)
 Mouse to aim
 Spacebar to shoot a bullet
-W,a,s,d to move (only for 10th level single payer)
 
-Main objective: There are 10 levels in this game and the objective is to get through all of the levels
+Main objective: There are 5 levels in this game and the objective is to get through all of the levels
 without running out of ammo or going past the time limit. Enemies take one bullet to kill. You need to
 shoot the enemies with bullets to make their health bar empty. To get past a level all of your enemies
 need to die. You lose if you run out of ammo. You are not allowed to move for the first nine level. As
@@ -51,22 +50,12 @@ flash up on the screen saying “Loser!” and you restart at level 1 no matter 
 before. The time limit of the level and the amount of bullets you have are constantly displayed during 
 the game in the upper right hand corner.
 
-10th Level: The 10th level is different from the first 9 levels as in this level you are able to move 
-at will. During this level the game basically becomes a battle royale and the enemies are all able to 
-shoot bullets (the enemies have unlimited ammo) and are able to move at will. The enemies are just 
-cpu’s whose only goal is to shoot and kill you. It only takes one bullet to kill you just like it only
-takes one bullet to kill the enemies. Furthermore, you still only have a limited amount of ammo (to be 
-determined by the coder) and there is still a time limit. You want to be able to kill all of the 
-enemies without dying yourself, without running out of time, and without running out of bullets. If you 
-fail to do this then you restart at level one:(
-
 Multiplayer: In the multiplayer version of this game it is just like the normal version except you and 
 the other player are spawned at different parts of the room and the levels are all much more difficult 
 than the single player version since you have more ammo as you have two people playing. They way the 
 two players play is that player one will go first and shoot their first bullet off at the enemy and 
 then player two will use the same controls to shoot a bullet from their sprite and it will alternate 
 like this until you win or lose. It is up to the game coder on how hard to make the levels to make it 
-not too easy or hard for the two players to win. The 10th level for multiplayer is just another regular
-level. The 10th level for multiplayer is just very very hard. Player one’s stat (bullets left) is shown 
+not too easy or hard for the two players to win.  Player one’s stat (bullets left) is shown 
 on the upper left hand corner and player two’s stat is shown on the upper right hand corner. The time 
 remaining in the level is shown in the middle of the top of the game.
