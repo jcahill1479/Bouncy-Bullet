@@ -5,6 +5,7 @@ Player
 			-Rendering sprite with that rotation
 		Functions
 			-pointToMouse() - points the player to the mouse, called every frame
+			-fireBullet() - use spacebar to fire bullet
 		Performance Impact
 			-Minimal, just calculating rotation based on mouse position and rendering sprite at that rotation
 	Dependencies
