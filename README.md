@@ -7,12 +7,10 @@ Regular controls:
 Mouse to aim
 Spacebar to shoot a bullet
 
-Main objective: There are 5 levels in this game and the objective is to get through all of the levels
+Main objective: There are 10 levels in this game and the objective is to get through all of the levels
 without running out of ammo or going past the time limit. Enemies take one bullet to kill. You need to
 shoot the enemies with bullets to make their health bar empty. To get past a level all of your enemies
-need to die. You lose if you run out of ammo. You are not allowed to move for the first nine level. As
-the levels get harder enemies may start to move back and forth in different directions and for 
-different lengths. The number of enemies will also change as levels get harder. 
+need to die. You lose if you run out of ammo.  As the levels get harder enemies may start to move back and forth in different directions and for different lengths. The number of enemies will also change as levels get harder. 
 
 Side objective: Aside from getting through each level still alive and having killed your enemies, there
 is one coin that appears each level that you can shoot to collect. You want to have collected all or as
