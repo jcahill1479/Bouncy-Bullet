@@ -25,15 +25,15 @@ Everything else is codable
 
 12 Day Plan:
 
-Day 1 = Create player who's aim follows the mouse
-Day 2 = Code the player to be able to fire a bullet in the direction of the angle they are aiming
-Days 3-4 = Code bullet to be able to bounce off of walls for a maximum of three times at a constant speed at the correct angle
-Days 5 = Add enemies who are able to die with one bullet that makes the enemy vanish
-Day 6 = Chose where the enemy and player should be placed
-Days 7-9 = Add the barriers inside the four game walls with gates and the buttons to open them inside the levels (make sure that the barriers are placed in a way that the levels get harder each level but not impossible)
-Days 10-12 = Design the end conditions for each level (out of ammo, timer running out, or killing all the enemies) and make sure that the player either moves on to the next level if they win or that they go back to level 1 if they lose the level
+Day 1 = Create player who's aim follows the mouse (see lines 7 and 38 of the tech spec)
+Day 2 = Code the player to be able to fire a bullet in the direction of the angle they are aiming (see line 8 of tech spec)
+Days 3-4 = Code bullet to be able to bounce off of walls for a maximum of three times at a constant speed at the correct angle (see lines 40-84 of tech spec)
+Days 5 = Add enemies who are able to die with one bullet that makes the enemy vanish (see lines 85-124 of tech spec)
+Day 6 = Chose where the enemy and player should be placed in the level (see lines 364-365)
+Days 7-9 = Add the barriers inside the four game walls with gates and the buttons to open them inside the levels (make sure that the barriers are placed in a way that the levels get harder each level but not impossible) (see lines 356-403 of tech spec)
+Days 10-12 = Design the end conditions for each level (out of ammo, timer running out, or killing all the enemies) and make sure that the player either moves on to the next level if they win or that they go back to level 1 if they lose the level (See lines 283-318, 248-282 of tech spec)
 
 3 Optional Days:
 
-Days 1-3 = Add coins into each level for the player to collect
+Days 1-3 = Add coins into each level for the player to collect (see lines 319-355)
     - The reason this takes 3 days is that to make it possible to collect the coin and still win each level the coder might have to change some of the variables in each level like ammo amount and where the barriers are positioned
