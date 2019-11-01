@@ -301,7 +301,7 @@ function updatePower(strike){
     context2.strokeRect(100,10,99,25);
     powerbar = strike * 3;
 
-    if (powerbar<=99)
+    if (powerbar<=99){
         context2.fillRect(100,10,powerbar,25);
     }
 
