@@ -7,6 +7,9 @@ startImg.src = "images/start.png";
 var ball = new Image();
 ball.src = "images/ball.png";
 
+//var hole = new Image();
+//hole.src = "imges/vin.png";
+
 var ballPosition = [];
 var holePosition = [];
 var boundariesPosition = [];
@@ -207,20 +210,21 @@ function drawWall(wallX,wallY,wallW,wallH){
 
 //Draw hole
 function drawHole(){
-    //Hole border
+    //hole border
     context.beginPath();
     context.arc(holePosX,holePosY,holeRadius+5,0,7);
     context.closePath();
     context.fillStyle = "#d6d6c2";
     context.fill();
 
-    //Hole
+    //hole
     context.beginPath();
     context.arc(holePosX,holePosY,holeRadius,0,7);
     context.closePath();
     context.fillStyle = "#004d00";
     context.fill();
 }
+
 
 //Draw Track Line
 function trackLine() {
