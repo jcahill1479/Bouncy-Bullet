@@ -7,9 +7,6 @@ startImg.src = "images/start.png";
 var ball = new Image();
 ball.src = "images/ball.png";
 
-//var hole = new Image();
-//hole.src = "imges/vin.png";
-
 var ballPosition = [];
 var holePosition = [];
 var boundariesPosition = [];
@@ -26,8 +23,6 @@ for (var x = 0; x<=4; x++){
 
 for (var x = 0; x<=4; x++){
     boundariesPosition[x]= new Array(arraySize2);
-    sandPosition[x]= new Array(arraySize2);
-    waterPosition[x]= new Array(arraySize2);
     wallPosition[x]= new Array(arraySize2);
 }
 
@@ -35,8 +30,6 @@ for (var x = 0; x<=4; x++){
 ballPosition       = [[130,200]      ,[80,200]        ,[80,80]          ,[100,300]       ];
 holePosition       = [[270,200]      ,[300,280]       ,[315,180]        ,[300,300]       ];
 boundariesPosition = [[80,80,80,80]  ,[50,50,50,50]   ,[50,50,50,50]    ,[50,50,50,50]   ];
-sandPosition       = [[0,0,0,0]      ,[180,50,80,230] ,[120,50,150,80]  ,[55,55,120,120] ];
-waterPosition      = [[0,0,0,0]      ,[0,0,0,0]       ,[120,130,150,100],[220,200,40,100]];
 wallPosition       = [[180,180,40,40],[180,300,80,100],[0,0,0,0]        ,[180,200,40,200]];
 
 var level = 0;
@@ -59,8 +52,6 @@ var holeRadius = 5;
 var boundaryUpSize, boundaryRightSize, boundaryDownSize, boundaryLeftSize;
 var boundaryRight, boundaryLeft, boundaryUp, boundaryDown;
 
-var sandX, sandY, sandW, sandH;
-var waterX, waterY, waterW, waterH;
 var wallX, wallY, wallW, wallH;
 
 var levelScore = 0;
@@ -135,15 +126,7 @@ function start(){
     boundaryUp = boundaryUpSize;
     boundaryDown = canvas.height-boundaryDownSize;
 
-    sandX = sandPosition[level-1][0];
-    sandY = sandPosition[level-1][1];
-    sandW = sandPosition[level-1][2];
-    sandH = sandPosition[level-1][3];
 
-    waterX = waterPosition[level-1][0];
-    waterY = waterPosition[level-1][1];
-    waterW = waterPosition[level-1][2];
-    waterH = waterPosition[level-1][3];
 
     wallX = wallPosition[level-1][0];
     wallY = wallPosition[level-1][1];
@@ -167,8 +150,8 @@ function draw(){
     drawBoundaries(0,0,canvas.width,boundaryUpSize);
     drawBoundaries(0,canvas.height-boundaryDownSize,canvas.height,boundaryDownSize);
     drawHole();
-    drawSand(sandX,sandY,sandW,sandH);
-    drawWater(waterX,waterY,waterW,waterH);
+    //drawSand(sandX,sandY,sandW,sandH);
+    //drawWater(waterX,waterY,waterW,waterH);
     drawWall(wallX,wallY,wallW,wallH);
 }
 
@@ -178,24 +161,6 @@ function drawBoundaries(xBon,yBon,w,h){
     context.fillStyle="grey";
     context.fillRect(xBon,yBon,w,h);
     context.closePath()
-    context.fill();
-}
-
-//Draw sand
-function drawSand(sandX,sandY,sandW,sandH){
-    context.beginPath();
-    context.fillStyle="#e6e600";
-    context.fillRect(sandX,sandY,sandW,sandH);
-    context.closePath();
-    context.fill();
-}
-
-//Draw water
-function drawWater(waterX,waterY,waterW,waterH){
-    context.beginPath();
-    context.fillStyle="#00bfff";
-    context.fillRect(waterX,waterY,waterW,waterH);
-    context.closePath();
     context.fill();
 }
 
@@ -375,29 +340,7 @@ function moveBall(){
             timesBounced = timesBounced + 1;
         }
 
-        //SAND: If ball reaches sand, reduce movement amount by incresaing counter, adjust positions
-        if (ballStartX > sandX && ballStartX < (sandX+sandW-ballWidth) && ballStartY > sandY && ballStartY < (sandY+sandH-ballHeight) ){
-            intervalCount = 5;
-            ballNewPosX = ballStartX;
-            ballNewPosY = ballStartY;
-            intermediateX = 0;
-            intermediateY = 0;
-        }
 
-        //WATER: If ball goes into water, stop movement, reset ball position to initial
-        if (ballStartX > waterX-ballWidth/2 && ballStartX < (waterX+waterW-ballWidth) && ballStartY > waterY-ballHeight/2 && ballStartY < (waterY+waterH-ballHeight) ){
-            clearInterval(ballInterval);
-            document.removeEventListener("mousemove",trackLine);
-            setTimeout(function(){
-                ballNewPosX = ballInitialX;
-                ballNewPosY = ballInitialY;
-                ballStartX = ballInitialX;
-                ballStartY = ballInitialY;
-                context.clearRect(0,0,canvas.width,canvas.height);
-                document.addEventListener("mousemove",trackLine);
-                draw();
-            },1500)
-        }
 
        //WALL: Bounce the ball if hits walls
         if (ballStartX > wallX-ballWidth && ballStartX < wallX+wallW && ballStartY > wallY-ballHeight && ballStartY < wallY+wallH){
