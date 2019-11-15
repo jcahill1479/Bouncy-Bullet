@@ -126,7 +126,7 @@ function start(){
     boundaryUp = boundaryUpSize;
     boundaryDown = canvas.height-boundaryDownSize;
 
-
+//.push ([x,y,w,h])
 
     wallX = wallPosition[level-1][0];
     wallY = wallPosition[level-1][1];
@@ -153,6 +153,7 @@ function draw(){
     //drawSand(sandX,sandY,sandW,sandH);
     //drawWater(waterX,waterY,waterW,waterH);
     drawWall(wallX,wallY,wallW,wallH);
+    drawWall(100,100,10,10);
 }
 
 //Draw the boundaries
