@@ -30,7 +30,23 @@ for (var x = 0; x<=4; x++){
 ballPosition       = [[130,200]      ,[80,200]        ,[80,80]          ,[100,300]       ];
 holePosition       = [[270,200]      ,[300,280]       ,[315,180]        ,[300,300]       ];
 boundariesPosition = [[80,80,80,80]  ,[50,50,50,50]   ,[50,50,50,50]    ,[50,50,50,50]   ];
-wallPosition       = [[180,180,40,40],[180,300,80,100],[0,0,0,0]        ,[180,200,40,200]];
+wallPosition       = [  //for each level
+  //each wall
+  [
+    //position of individual wall - wall details
+  [180,180,40,40], [180, 80, 10, 40], [180, 320, 10, 40]
+  ],
+  [[180,300,80,100]
+  ],
+  [[0,0,0,0]
+  ],
+  [[180,200,40,200]
+  ]
+];
+// wallX = wallPosition[level-1][0];
+// wallY = wallPosition[level-1][1];
+// wallW = wallPosition[level-1][2];
+// wallH = wallPosition[level-1][3];
 
 var level = 0;
 var lastLevel = 5;
@@ -126,14 +142,13 @@ function start(){
     boundaryUp = boundaryUpSize;
     boundaryDown = canvas.height-boundaryDownSize;
 
-//.push ([x,y,w,h])
 
-    wallX = wallPosition[level-1][0];
-    wallY = wallPosition[level-1][1];
-    wallW = wallPosition[level-1][2];
-    wallH = wallPosition[level-1][3];
-
-    //Draw objects and ball
+    // wallX = wallPosition[level-1][0];
+    // wallY = wallPosition[level-1][1];
+    // wallW = wallPosition[level-1][2];
+    // wallH = wallPosition[level-1][3];
+    //
+    // //Draw objects and ball
     draw();
     drawBall();
 }
@@ -152,8 +167,17 @@ function draw(){
     drawHole();
     //drawSand(sandX,sandY,sandW,sandH);
     //drawWater(waterX,waterY,waterW,waterH);
-    drawWall(wallX,wallY,wallW,wallH);
-    drawWall(100,100,10,10);
+
+var howManyWalls = wallPosition[level-1]["length"];
+var count;
+for (int i = 0, i < howManyWalls; i++){
+  wallX = wallPosition[level-1][i][0];
+  wallY = wallPosition[level-1][i][1];
+  wallW = wallPosition[level-1][i][2];
+  wallH = wallPosition[level-1][i][3];
+  drawWall(wallX,wallY,wallW,wallH);
+}
+  // drawWall(100,100,10,10);
 }
 
 //Draw the boundaries
