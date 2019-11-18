@@ -34,7 +34,7 @@ wallPosition       = [  //for each level
   //each wall
   [
     //position of individual wall - wall details
-  [180,180,40,40], [180, 80, 10, 40], [180, 320, 10, 40]
+  [180,180,40,40], [180, 80, 30, 60], [180, 280, 30, 60], [220, 215, 50, 5], [270, 185, 50, 5]
   ],
   [[180,300,80,100]
   ],
@@ -43,10 +43,6 @@ wallPosition       = [  //for each level
   [[180,200,40,200]
   ]
 ];
-// wallX = wallPosition[level-1][0];
-// wallY = wallPosition[level-1][1];
-// wallW = wallPosition[level-1][2];
-// wallH = wallPosition[level-1][3];
 
 var level = 0;
 var lastLevel = 5;
@@ -169,15 +165,13 @@ function draw(){
     //drawWater(waterX,waterY,waterW,waterH);
 
 var howManyWalls = wallPosition[level-1]["length"];
-var count;
-for (int i = 0, i < howManyWalls; i++){
+for (var i = 0; i < howManyWalls; i++){
   wallX = wallPosition[level-1][i][0];
   wallY = wallPosition[level-1][i][1];
   wallW = wallPosition[level-1][i][2];
   wallH = wallPosition[level-1][i][3];
   drawWall(wallX,wallY,wallW,wallH);
 }
-  // drawWall(100,100,10,10);
 }
 
 //Draw the boundaries
