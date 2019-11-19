@@ -362,16 +362,30 @@ function moveBall(){
 
 
        //WALL: Bounce the ball if hits walls
-        if (ballStartX > wallX-ballWidth && ballStartX < wallX+wallW && ballStartY > wallY-ballHeight && ballStartY < wallY+wallH){
-            ballNewPosX = ballStartX - (7 - intervalCount) * intermediateX;
-            ballStartX = ballStartX - intermediateX;
-            intermediateX = - intermediateX;
+       console.log (wallX, ballStartX, wallW, ballWidth, ballStartY, wallY);
 
-            ballNewPosY = ballStartY - (7 - intervalCount) * intermediateY;
-            ballStartY = ballStartY - intermediateY;
-            intermediateY = - intermediateY;
-            timesBounced = timesBounced + 1;
+       if (ballStartX < wallX + wallW/2
+       && ballStartX > wallX - wallW/2){
+           console.log("Hit the wall");
+         }
+         //if the ball position = wall postion, then its over a wall
+
+        if (ballStartX > wallX-ballWidth
+          && ballStartX < wallX+wallW
+          && ballStartY > wallY-ballHeight
+           && ballStartY < wallY+wallH){
+            // ballNewPosX = ballStartX - (7 - intervalCount) * intermediateX;
+            // ballStartX = ballStartX - intermediateX;
+            // intermediateX = - intermediateX;
+            //
+            // ballNewPosY = ballStartY - (7 - intervalCount) * intermediateY;
+            // ballStartY = ballStartY - intermediateY;
+            // intermediateY = - intermediateY;
+            // timesBounced = timesBounced + 1;
         }
+        // function contactWithWall (){
+        //   if
+        // }
 
         //Clear canvas and Draw objects
         context.clearRect(0,0,canvas.width,canvas.height);
