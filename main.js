@@ -359,7 +359,27 @@ function moveBall(){
             timesBounced = timesBounced + 1;
         }
 
+        var howManyWalls = wallPosition[level-1]["length"];
+        for (var i = 0; i < howManyWalls; i++){
+          wallX = wallPosition[level-1][i][0];
+          wallY = wallPosition[level-1][i][1];
+          wallW = wallPosition[level-1][i][2];
+          wallH = wallPosition[level-1][i][3];
+          if ((ballStartY > wallY - wallH/2)
+          && (ballStartY < wallY + wallH/2)
+          && (ballStartX < wallX + wallW/2)
+          && (ballStartX > wallX - wallW/2)){
+                        ballNewPosX = ballStartX - (7 - intervalCount) * intermediateX;
+                        ballStartX = ballStartX - intermediateX;
+                        intermediateX = - intermediateX;
 
+                        ballNewPosY = ballStartY - (7 - intervalCount) * intermediateY;
+                        ballStartY = ballStartY - intermediateY;
+                        intermediateY = - intermediateY;
+                        timesBounced = timesBounced + 1;
+            console.log("Hit the wall");
+          }
+        }
 
        //WALL: Bounce the ball if hits walls
        console.log (wallX, ballStartX, wallW, ballWidth, ballStartY, wallY);
@@ -375,6 +395,8 @@ function moveBall(){
           && ballStartX < wallX+wallW
           && ballStartY > wallY-ballHeight
            && ballStartY < wallY+wallH){
+
+
             // ballNewPosX = ballStartX - (7 - intervalCount) * intermediateX;
             // ballStartX = ballStartX - intermediateX;
             // intermediateX = - intermediateX;
