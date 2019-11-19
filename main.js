@@ -363,9 +363,10 @@ function moveBall(){
 
        //WALL: Bounce the ball if hits walls
        console.log (wallX, ballStartX, wallW, ballWidth, ballStartY, wallY);
-
-       if (ballStartX < wallX + wallW/2
-       && ballStartX > wallX - wallW/2){
+       if ((ballStartY > wallY - wallH/2)
+       && (ballStartY < wallY + wallH/2)
+       && (ballStartX < wallX + wallW/2)
+       && (ballStartX > wallX - wallW/2)){
            console.log("Hit the wall");
          }
          //if the ball position = wall postion, then its over a wall
