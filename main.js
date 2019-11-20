@@ -15,6 +15,7 @@ var waterPosition = [];
 var wallPosition = [];
 var arraySize1 = 2;
 var arraySize2 = 4;
+var endGame = 0;
 
 for (var x = 0; x<=4; x++){
     ballPosition[x]= new Array(arraySize1);
@@ -40,12 +41,12 @@ wallPosition       = [  //for each level
   ],
   [[80,80,20,20], [80,120,20,20], [80,160,20,20], [80,200,20,20], [80,240,20,20], [80,280,20,20], [80,320,20,20], [120,60,20,20], [120,100,20,20], [120,140,20,20], [120,180,20,20], [120,220,20,20], [120,260,20,20], [120,300,20,20], [120,340,20,20], [160,80,20,20], [160,120,20,20], [160,160,20,20], [160,200,20,20], [160,240,20,20], [160,280,20,20], [160,320,20,20], [200,60,20,20], [200,100,20,20], [200,140,20,20], [200,180,20,20], [200,220,20,20], [200,260,20,20], [200,300,20,20],[240,80,20,20], [240,120,20,20], [240,160,20,20], [240,200,20,20], [240,240,20,20], [240,280,20,20], [240,320,20,20], [280,60,20,20], [280,100,20,20], [280,140,20,20], [280,180,20,20], [280,220,20,20], [280,260,20,20], [280,300,20,20], [280,340,20,20]
   ],
-  [[180,200,40,200], [100, 250, 100, 20], [50, 200, 75, 20], [200, 250, 75, 20], [250, 200, 75, 20]
+  [[180,200,40,200], [100, 250, 100, 20], [50, 200, 75, 20], [200, 250, 75, 20], [250, 200, 75, 20],
   ]
 ];
 // var wallX, wallY, width, height;
 var level = 0;
-var lastLevel = 5;
+var lastLevel = 4;
 
 var ballInitialX, ballInitialY;
 var ballWidth = 10;
@@ -139,10 +140,10 @@ function start(){
     boundaryDown = canvas.height-boundaryDownSize;
 
 
-    // wallX = wallPosition[level-1][0];
-    // wallY = wallPosition[level-1][1];
-    // wallW = wallPosition[level-1][2];
-    // wallH = wallPosition[level-1][3];
+     wallX = wallPosition[level-1][0];
+     wallY = wallPosition[level-1][1];
+     wallW = wallPosition[level-1][2];
+     wallH = wallPosition[level-1][3];
     //
     // //Draw objects and ball
     draw();
@@ -161,8 +162,6 @@ function draw(){
     drawBoundaries(0,0,canvas.width,boundaryUpSize);
     drawBoundaries(0,canvas.height-boundaryDownSize,canvas.height,boundaryDownSize);
     drawHole();
-    //drawSand(sandX,sandY,sandW,sandH);
-    //drawWater(waterX,waterY,waterW,waterH);
 
 var howManyWalls = wallPosition[level-1]["length"];
 for (var i = 0; i < howManyWalls; i++){
