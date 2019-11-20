@@ -27,11 +27,23 @@ for (var x = 0; x<=4; x++){
 }
 
 //Levels coord     =      1               2                3                 4
-ballPosition       = [[130,200]      ,[80,200]        ,[80,80]          ,[100,300]       ];
+ballPosition       = [[130,200]      ,[80,200]        ,[60,205]         ,[100,300]       ];
 holePosition       = [[270,200]      ,[300,280]       ,[315,180]        ,[300,300]       ];
 boundariesPosition = [[80,80,80,80]  ,[50,50,50,50]   ,[50,50,50,50]    ,[50,50,50,50]   ];
-wallPosition       = [[180,180,40,40],[180,300,80,100],[0,0,0,0]        ,[180,200,40,200]];
-
+wallPosition       = [  //for each level
+  //each wall
+  [
+    //position of individual wall - wall details
+  [180,180,40,40], [180, 80, 30, 60], [180, 280, 30, 60], [220, 215, 50, 5], [270, 185, 50, 5]
+  ],
+  [[180,300,80,100], [70, 235, 210, 15], [120, 90, 15, 160], [280, 90, 15, 120], [295, 150, 30, 15], [320, 190, 30, 15], [180, 130, 80, 15], [70, 275, 15, 15], [70, 305, 15,15]
+  ],
+  [[80,80,20,20], [80,120,20,20], [80,160,20,20], [80,200,20,20], [80,240,20,20], [80,280,20,20], [80,320,20,20], [120,60,20,20], [120,100,20,20], [120,140,20,20], [120,180,20,20], [120,220,20,20], [120,260,20,20], [120,300,20,20], [120,340,20,20], [160,80,20,20], [160,120,20,20], [160,160,20,20], [160,200,20,20], [160,240,20,20], [160,280,20,20], [160,320,20,20], [200,60,20,20], [200,100,20,20], [200,140,20,20], [200,180,20,20], [200,220,20,20], [200,260,20,20], [200,300,20,20],[240,80,20,20], [240,120,20,20], [240,160,20,20], [240,200,20,20], [240,240,20,20], [240,280,20,20], [240,320,20,20], [280,60,20,20], [280,100,20,20], [280,140,20,20], [280,180,20,20], [280,220,20,20], [280,260,20,20], [280,300,20,20], [280,340,20,20]
+  ],
+  [[180,200,40,200], [100, 250, 100, 20], [50, 200, 75, 20], [200, 250, 75, 20], [250, 200, 75, 20]
+  ]
+];
+// var wallX, wallY, width, height;
 var level = 0;
 var lastLevel = 5;
 
@@ -127,13 +139,12 @@ function start(){
     boundaryDown = canvas.height-boundaryDownSize;
 
 
-
-    wallX = wallPosition[level-1][0];
-    wallY = wallPosition[level-1][1];
-    wallW = wallPosition[level-1][2];
-    wallH = wallPosition[level-1][3];
-
-    //Draw objects and ball
+    // wallX = wallPosition[level-1][0];
+    // wallY = wallPosition[level-1][1];
+    // wallW = wallPosition[level-1][2];
+    // wallH = wallPosition[level-1][3];
+    //
+    // //Draw objects and ball
     draw();
     drawBall();
 }
@@ -152,7 +163,15 @@ function draw(){
     drawHole();
     //drawSand(sandX,sandY,sandW,sandH);
     //drawWater(waterX,waterY,waterW,waterH);
-    drawWall(wallX,wallY,wallW,wallH);
+
+var howManyWalls = wallPosition[level-1]["length"];
+for (var i = 0; i < howManyWalls; i++){
+  wallX = wallPosition[level-1][i][0];
+  wallY = wallPosition[level-1][i][1];
+  wallW = wallPosition[level-1][i][2];
+  wallH = wallPosition[level-1][i][3];
+  drawWall(wallX,wallY,wallW,wallH);
+}
 }
 
 //Draw the boundaries
@@ -340,19 +359,56 @@ function moveBall(){
             timesBounced = timesBounced + 1;
         }
 
+        var howManyWalls = wallPosition[level-1]["length"];
+        for (var i = 0; i < howManyWalls; i++){
+          wallX = wallPosition[level-1][i][0];
+          wallY = wallPosition[level-1][i][1];
+          wallW = wallPosition[level-1][i][2];
+          wallH = wallPosition[level-1][i][3];
+          if ((ballStartY > wallY - wallH/2)
+          && (ballStartY < wallY + wallH/2)
+          && (ballStartX < wallX + wallW/2)
+          && (ballStartX > wallX - wallW/2)){
+                        ballNewPosX = ballStartX - (7 - intervalCount) * intermediateX;
+                        ballStartX = ballStartX - intermediateX;
+                        intermediateX = - intermediateX;
 
+                        ballNewPosY = ballStartY - (7 - intervalCount) * intermediateY;
+                        ballStartY = ballStartY - intermediateY;
+                        intermediateY = - intermediateY;
+                        timesBounced = timesBounced + 1;
+            console.log("Hit the wall");
+          }
+        }
 
        //WALL: Bounce the ball if hits walls
-        if (ballStartX > wallX-ballWidth && ballStartX < wallX+wallW && ballStartY > wallY-ballHeight && ballStartY < wallY+wallH){
-            ballNewPosX = ballStartX - (7 - intervalCount) * intermediateX;
-            ballStartX = ballStartX - intermediateX;
-            intermediateX = - intermediateX;
+       console.log (wallX, ballStartX, wallW, ballWidth, ballStartY, wallY);
+       if ((ballStartY > wallY - wallH/2)
+       && (ballStartY < wallY + wallH/2)
+       && (ballStartX < wallX + wallW/2)
+       && (ballStartX > wallX - wallW/2)){
+           console.log("Hit the wall");
+         }
+         //if the ball position = wall postion, then its over a wall
 
-            ballNewPosY = ballStartY - (7 - intervalCount) * intermediateY;
-            ballStartY = ballStartY - intermediateY;
-            intermediateY = - intermediateY;
-            timesBounced = timesBounced + 1;
+        if (ballStartX > wallX-ballWidth
+          && ballStartX < wallX+wallW
+          && ballStartY > wallY-ballHeight
+           && ballStartY < wallY+wallH){
+
+
+            // ballNewPosX = ballStartX - (7 - intervalCount) * intermediateX;
+            // ballStartX = ballStartX - intermediateX;
+            // intermediateX = - intermediateX;
+            //
+            // ballNewPosY = ballStartY - (7 - intervalCount) * intermediateY;
+            // ballStartY = ballStartY - intermediateY;
+            // intermediateY = - intermediateY;
+            // timesBounced = timesBounced + 1;
         }
+        // function contactWithWall (){
+        //   if
+        // }
 
         //Clear canvas and Draw objects
         context.clearRect(0,0,canvas.width,canvas.height);
