@@ -5,7 +5,7 @@ var startImg = new Image();
 startImg.src = "images/start.png";
 
 var ball = new Image();
-ball.src = "images/ball.png";
+ball.src = "images/bullet.png";
 
 var ballPosition = [];
 var holePosition = [];
