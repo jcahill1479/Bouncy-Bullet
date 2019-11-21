@@ -49,13 +49,12 @@ var level = 0;
 var lastLevel = 4;
 
 var ballInitialX, ballInitialY;
+var ballStartX, ballStartY;
+var ballNewPosX, ballNewPosY;
 var ballWidth = 10;
 var ballHeight = 10;
 
 var strike = 0;
-
-var ballStartX, ballStartY;
-var ballNewPosX, ballNewPosY;
 
 var mousePosX, mousePosY;
 
@@ -207,7 +206,6 @@ function drawHole(){
     context.fillStyle = "#004d00";
     context.fill();
 }
-
 
 //Draw Track Line
 function trackLine() {
